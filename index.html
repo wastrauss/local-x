@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Specials & Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Local Specials & Services</h1>
+    <nav>
+      <button class="filter-btn" data-category="all">All</button>
+      <button class="filter-btn" data-category="food">Food</button>
+      <button class="filter-btn" data-category="health">Health</button>
+      <button class="filter-btn" data-category="retail">Retail</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="business-grid" class="grid">
+      <!-- Example business cards -->
+      <div class="card" data-category="food">
+        <img src="images/business1.webp" alt="Business 1" loading="lazy">
+        <h3>Joe's Diner</h3>
+        <p>Best burgers in town.</p>
+        <a href="about/joes-diner.html">About</a>
+      </div>
+
+      <div class="card" data-category="health">
+        <img src="images/business2.webp" alt="Business 2" loading="lazy">
+        <h3>Healthy Life Spa</h3>
+        <p>Relax & rejuvenate.</p>
+        <a href="about/healthy-life.html">About</a>
+      </div>
+
+      <!-- Repeat for all businesses -->
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
