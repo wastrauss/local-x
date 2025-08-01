@@ -1,4 +1,4 @@
-baseurl: '/'
+baseurl: '/local-x'
 permalink: pretty
 title: 'Jekyll Serif'
 
