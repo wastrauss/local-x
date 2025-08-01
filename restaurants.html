@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local X - Restaurants & Cafes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Consistent styles from homepage */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header-bg-color {
+            background-color: #F97316;
+        }
+        .footer-bg-color {
+            background-color: #1F2937;
+        }
+        .title-x {
+            background-color: #ffffff;
+            color: #F97316;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
+        /* Styles for individual business special cards in the grid */
+        .business-special-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.08), 0 3px 6px -2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Ensures rounded corners apply to content */
+        }
+        .business-special-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1), 0 6px 10px -3px rgba(0, 0, 0, 0.05);
+        }
+        .business-special-card img {
+            width: 100%;
+            height: 150px; /* Fixed height for image consistency */
+            object-fit: cover; /* Ensures image covers the area nicely */
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+        .business-special-card-content {
+            padding: 1.5rem;
+            flex-grow: 1; /* Allows content to expand */
+            display: flex;
+            flex-direction: column;
+        }
+        .business-special-card h3 {
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem; /* text-xl */
+        }
+        .business-special-card p {
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.4;
+            flex-grow: 1; /* Allows description to take up available space */
+        }
+        .business-special-card .special-offer {
+            font-weight: 600;
+            color: #F97316; /* Orange for special offers */
+            margin-top: 1rem;
+        }
+        /* Left sidebar specific styles */
+        .sidebar {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.08), 0 3px 6px -2px rgba(0, 0, 0, 0.03);
+            padding: 1.5rem;
+        }
+        .sidebar-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            color: #374151;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .sidebar-link:hover {
+            background-color: #F3F4F6;
+            color: #F97316;
+        }
+        .sidebar-link.active {
+            background-color: #F97316;
+            color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Section: Main title for the website -->
+    <header class="header-bg-color p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">
+                <a href="index.html" class="text-white no-underline">Local <span class="title-x">X</span></a>
+            </h1>
+            <nav>
+                <a href="index.html" class="text-white text-lg hover:underline">Home</a>
+                <!-- Add other global navigation links here if needed -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Flex container for sidebar and main content -->
+    <main class="flex flex-grow p-4 md:p-8">
+        <div class="container mx-auto flex flex-col lg:flex-row gap-6">
+
+            <!-- Left Sidebar: Tree structure for categories/filters -->
+            <aside class="w-full lg:w-1/4 sidebar p-4">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Categories</h2>
+                <nav>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="sidebar-link active">Restaurants & Cafes</a></li>
+                        <li class="mb-2"><a href="services.html" class="sidebar-link">Professional Services</a></li>
+                        <li class="mb-2"><a href="health-beauty.html" class="sidebar-link">Health & Beauty</a></li>
+                        <li class="mb-2"><a href="automotive.html" class="sidebar-link">Automotive Services</a></li>
+                        <li class="mb-2"><a href="retail.html" class="sidebar-link">Retail & Shopping</a></li>
+                        <li class="mb-2"><a href="home-garden.html" class="sidebar-link">Home & Garden</a></li>
+                        <!-- Add sub-categories here when you implement them -->
+                        <li class="mt-4 mb-2"><h3 class="font-bold text-gray-700">Restaurant Types</h3></li>
+                        <li class="mb-2"><a href="#" class="sidebar-link">Fine Dining</a></li>
+                        <li class="mb-2"><a href="#" class="sidebar-link">Casual Eateries</a></li>
+                        <li class="mb-2"><a href="#" class="sidebar-link">Cafes</a></li>
+                        <li class="mb-2"><a href="#" class="sidebar-link">Takeaways</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Right Main Content Area: Grid of businesses/specials -->
+            <section class="flex-grow w-full lg:w-3/4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center lg:text-left">
+                    Restaurants & Cafes in Somerset West
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+
+                    <!-- Business Special Card Example 1 -->
+                    <a href="business-detail-page.html?id=daily-grind" class="business-special-card">
+                        <img src="https://placehold.co/600x400/F97316/ffffff?text=Cafe+Image" alt="The Daily Grind Cafe">
+                        <div class="business-special-card-content">
+                            <h3>The Daily Grind Café</h3>
+                            <p>A cozy spot for coffee lovers, serving artisanal blends and freshly baked pastries right in the heart of town.</p>
+                            <p class="special-offer">Special: 10% off your first coffee & pastry order!</p>
+                        </div>
+                    </a>
+
+                    <!-- Business Special Card Example 2 -->
+                    <a href="business-detail-page.html?id=bella-italia" class="business-special-card">
+                        <img src="https://placehold.co/600x400/10B981/ffffff?text=Italian+Food" alt="Bella Italia Ristorante">
+                        <div class="business-special-card-content">
+                            <h3>Bella Italia Ristorante</h3>
+                            <p>Experience authentic Italian cuisine with our homemade pasta and wood-fired pizzas, perfect for family dinners.</p>
+                            <p class="special-offer">Special: Family Pizza Night! Any 2 large pizzas for R250 on Tuesdays.</p>
+                        </div>
+                    </a>
+
+                    <!-- Business Special Card Example 3 -->
+                    <a href="business-detail-page.html?id=curry-pot" class="business-special-card">
+                        <img src="https://placehold.co/600x400/8B5CF6/ffffff?text=Curry+Dish" alt="The Curry Pot">
+                        <div class="business-special-card-content">
+                            <h3>The Curry Pot</h3>
+                            <p>Savour the rich flavours of traditional Indian dishes, from aromatic curries to delicious biryanis, prepared with fresh spices.</p>
+                            <p class="special-offer">Special: Lunch combos available daily!</p>
+                        </div>
+                    </a>
+
+                    <!-- Business Special Card Example 4 -->
+                    <a href="business-detail-page.html?id=ocean-breeze" class="business-special-card">
+                        <img src="https://placehold.co/600x400/3B82F6/ffffff?text=Seafood+Image" alt="Ocean Breeze Seafood">
+                        <div class="business-special-card-content">
+                            <h3>Ocean Breeze Seafood</h3>
+                            <p>Freshly caught seafood and grilled delights with stunning ocean views. The perfect setting for a romantic dinner.</p>
+                            <p class="special-offer">Special: Dessert on us with any main course!</p>
+                        </div>
+                    </a>
+
+                    <!-- Business Special Card Example 5 -->
+                    <a href="business-detail-page.html?id=sushi-spot" class="business-special-card">
+                        <img src="https://placehold.co/600x400/FBBF24/ffffff?text=Sushi+Plate" alt="The Sushi Spot">
+                        <div class="business-special-card-content">
+                            <h3>The Sushi Spot</h3>
+                            <p>Hand-rolled sushi and sashimi prepared by master chefs. Dine-in or convenient takeaway options available.</p>
+                            <p class="special-offer">Special: Buy one get one free on all sushi rolls every Wednesday.</p>
+                        </div>
+                    </a>
+
+                    <!-- Business Special Card Example 6 -->
+                    <a href="business-detail-page.html?id=burger-joint" class="business-special-card">
+                        <img src="https://placehold.co/600x400/EF4444/ffffff?text=Burger+Image" alt="Burger Haven">
+                        <div class="business-special-card-content">
+                            <h3>Burger Haven</h3>
+                            <p>Craft burgers made with premium ingredients, gourmet toppings, and crispy fries. A true burger experience.</p>
+                            <p class="special-offer">Special: Combo meal discount for students!</p>
+                        </div>
+                    </a>
+
+                    <!-- More business special cards can be added here -->
+
+                </div>
+
+                <!-- Show All Button -->
+                <div class="text-center mt-8">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-200">
+                        Show All Restaurants
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-bg-color p-4 text-gray-300 text-center mt-auto">
+        <div class="container mx-auto">
+            <a href="https://localx.co.za" class="text-lg hover:underline">localx.co.za</a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local X - Business Name Example</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Consistent styles from homepage and category page */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header-bg-color {
+            background-color: #F97316;
+        }
+        .footer-bg-color {
+            background-color: #1F2937;
+        }
+        .title-x {
+            background-color: #ffffff;
+            color: #F97316;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
+        /* Business detail specific styles */
+        .business-container {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.08), 0 3px 6px -2px rgba(0, 0, 0, 0.03);
+            padding: 2rem;
+        }
+        .business-logo-placeholder {
+            width: 150px; /* Adjust size as needed */
+            height: 150px;
+            border-radius: 50%; /* Circular logo placeholder */
+            background-color: #e5e7eb; /* Light grey */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #6b7280;
+            border: 2px solid #d1d5db;
+            flex-shrink: 0; /* Prevents shrinking in flex layout */
+        }
+        .special-offer-banner {
+            background-color: #FBBF24; /* Yellow from flyer */
+            color: #1F2937; /* Dark text */
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .contact-info a {
+            color: #F97316;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #374151;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .back-link:hover {
+            color: #F97316;
+        }
+        .back-link svg {
+            margin-right: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header Section -->
+    <header class="header-bg-color p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">
+                <a href="index.html" class="text-white no-underline">Local <span class="title-x">X</span></a>
+            </h1>
+            <nav>
+                <a href="index.html" class="text-white text-lg hover:underline">Home</a>
+                <!-- Add other global navigation links here if needed -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Business Details -->
+    <main class="flex-grow p-4 md:p-8">
+        <div class="container mx-auto">
+            <!-- Back to Category Link -->
+            <a href="restaurants.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                Back to Restaurants & Cafes
+            </a>
+
+            <div class="business-container">
+                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                    <!-- Business Logo Placeholder -->
+                    <div class="business-logo-placeholder">
+                        Business Logo
+                    </div>
+
+                    <!-- Business Info -->
+                    <div class="flex-grow">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-2">
+                            The Daily Grind Café
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-4">Shop 3, Main Rd, Somerset West</p>
+
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            The Daily Grind Café is your local sanctuary for coffee aficionados and pastry lovers. We pride ourselves on sourcing the finest beans and baking fresh delights daily. Whether you're catching up with friends, getting some work done, or just need a moment of peace, our cozy atmosphere and friendly baristas are here to welcome you.
+                        </p>
+
+                        <!-- Key Features/Services List (optional) -->
+                        <ul class="list-disc list-inside text-gray-700 mb-6">
+                            <li>Artisanal Coffee & Espresso</li>
+                            <li>Freshly Baked Pastries & Cakes</li>
+                            <li>Free Wi-Fi</li>
+                            <li>Outdoor Seating Available</li>
+                            <li>Loyalty Program</li>
+                        </ul>
+
+                        <!-- Special Offer Banner -->
+                        <div class="special-offer-banner">
+                            ✨ Special: 10% off your first coffee & pastry order! ✨
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="contact-info mt-6 text-gray-700">
+                            <p><strong>Phone:</strong> <a href="tel:+27218500000">021 850 0000</a></p>
+                            <p><strong>Website:</strong> <a href="https://www.dailygrindcafe.co.za" target="_blank">www.dailygrindcafe.co.za</a></p>
+                            <p><strong>Hours:</strong> Mon - Sat: 7:00 AM - 5:00 PM | Sun: 8:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code for direct link to business page or special (Optional, similar to flyer) -->
+                <div class="mt-8 flex justify-center">
+                    <img src="https://placehold.co/120x120/000000/FFFFFF?text=QR+Code" alt="QR Code to The Daily Grind Cafe" class="rounded-lg shadow-md">
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-bg-color p-4 text-gray-300 text-center mt-auto">
+        <div class="container mx-auto">
+            <a href="https://localx.co.za" class="text-lg hover:underline">localx.co.za</a>
+        </div>
+    </footer>
+
+</body>
+</html>
